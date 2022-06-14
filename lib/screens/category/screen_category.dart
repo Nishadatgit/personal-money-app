@@ -16,10 +16,7 @@ class _ScreenCatogoryState extends State<ScreenCatogory>
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
-    CategoryDb().getCategories().then((value) {
-      print('Get category');
-      print(value);
-    });
+    CategoryDb().refreshUI();
     super.initState();
   }
 
@@ -31,16 +28,16 @@ class _ScreenCatogoryState extends State<ScreenCatogory>
             controller: _tabController,
             labelColor: Colors.black,
             unselectedLabelColor: Colors.grey,
-            tabs: [
-              const Tab(text: 'INCOME'),
-              const Tab(
+            tabs: const [
+              Tab(text: 'INCOME'),
+              Tab(
                 text: 'EXPENSE',
               )
             ]),
         Expanded(
           child: TabBarView(
             controller: _tabController,
-            children: [
+            children: const [
               IncomeCategory(),
               ExpenseCategory(),
             ],

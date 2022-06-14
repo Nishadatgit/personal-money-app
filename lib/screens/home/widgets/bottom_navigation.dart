@@ -10,6 +10,8 @@ class MoneyManagerBottomNavigation extends StatelessWidget {
       valueListenable: ScreenHome.selectedIndexNotifier,
       builder: (BuildContext ctx, int updatedIndex, Widget? _) {
         return BottomNavigationBar(
+          backgroundColor: Colors.white,
+          elevation: 10,
           selectedItemColor: Colors.pink,
           unselectedItemColor: Colors.grey,
           selectedFontSize: 15,
