@@ -21,6 +21,13 @@ Future<void> showCategoryAddPopup(BuildContext context) async {
               padding: const EdgeInsets.only(
                   top: 10, right: 20, left: 20, bottom: 10),
               child: TextFormField(
+                autofocus: true,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'type something';
+                  }
+                  return null;
+                },
                 controller: _nameEditingController,
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.all(10),
