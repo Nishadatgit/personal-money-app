@@ -38,7 +38,7 @@ class ScreenHome extends StatelessWidget {
             showCategoryAddPopup(context);
           }
         },
-        child: Icon(Icons.add),
+        child:const Icon(Icons.add),
       ),
     );
   }
