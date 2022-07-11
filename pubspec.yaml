@@ -28,10 +28,12 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  eva_icons_flutter: ^3.1.0
   flutter:
     sdk: flutter
   hive: ^2.2.1
   hive_flutter: ^1.1.0
+  jiffy: ^5.0.0
 
 dev_dependencies:
   build_runner: ^2.1.11

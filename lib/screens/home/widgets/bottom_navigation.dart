@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanagement/screens/home/screen_home.dart';
 
+import '../../../db/transaction/transaction_db.dart';
+
 class MoneyManagerBottomNavigation extends StatelessWidget {
   const MoneyManagerBottomNavigation({Key? key}) : super(key: key);
 
@@ -17,6 +19,7 @@ class MoneyManagerBottomNavigation extends StatelessWidget {
           selectedFontSize: 15,
           currentIndex: updatedIndex,
           onTap: (newIndex) {
+             TransactionDB.instance.refreshUi();
             ScreenHome.selectedIndexNotifier.value = newIndex;
           },
           items: const [

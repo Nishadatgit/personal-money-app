@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanagement/db/category/category_db.dart';
+import 'package:moneymanagement/db/transaction/transaction_db.dart';
 import 'package:moneymanagement/models/category/category_model.dart';
 import 'package:moneymanagement/screens/add%20transaction/screen_add_transaction.dart';
 import 'package:moneymanagement/screens/category/category_add_popup.dart';
@@ -15,10 +16,12 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    CategoryDb().refreshUI();
+
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: Text('Money Manager'),
+        title: const Text('Money Manager'),
         centerTitle: true,
       ),
       bottomNavigationBar: const MoneyManagerBottomNavigation(),
@@ -32,13 +35,12 @@ class ScreenHome extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (selectedIndexNotifier.value == 0) {
-            print('Add transaction');
             Navigator.of(context).pushNamed(ScreenaddTransaction.routeName);
           } else {
             showCategoryAddPopup(context);
           }
         },
-        child:const Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
